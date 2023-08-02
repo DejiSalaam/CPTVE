@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}"/>  -->
+<style>
+body {
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    overflow: hidden;
+}
+
+/* Position the video at the top left corner and stretch to fill the viewport */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the video stretches to fill the container */
+    z-index: -1;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+
+</style>
+</head>
+<body>
+  <video autoplay muted loop id="video-background">
+    <source src="{{ url_for('static', filename='images/video.mp4') }}" type="video/mp4">
+  </video>
+
+  <div class="center">
+    <a href="/home" class="btn btn-lg btn-light fw-bold border-white bg-white" id="speed-up-button">CPTVE</a>
+  </div>
+
+</body>
+</html>
